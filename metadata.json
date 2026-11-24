@@ -1,0 +1,8 @@
+{
+  "name": "Tessera — Generative Pattern & Evolution Studio",
+  "description": "A continuous creative coding and shader studio for developing generative patterns and capturing timestamped visual evolutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "TutorialLesson": {
+      "title": "TutorialLesson",
+      "description": "A private interactive generative-art tutorial lesson belonging exclusively to the owner.",
+      "type": "object",
+      "properties": {
+        "lessonId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "ownerEmail": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 200
+        },
+        "orderIndex": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 400
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 8000
+        },
+        "completed": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "lessonId",
+        "ownerId",
+        "ownerEmail",
+        "orderIndex",
+        "title",
+        "summary",
+        "notes",
+        "completed",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/tutorialLessons/{lessonId}": {
+      "schema": {
+        "$ref": "#/entities/TutorialLesson"
+      },
+      "description": "Private owner-only generative pattern tutorial lessons and personal study notes."
+    }
+  }
+}
